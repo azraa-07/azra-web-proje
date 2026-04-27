@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe1ec, #e7f0ff);
+    color: #2b2b2b;
+}
+
+.navbar {
+    width: 100%;
+    padding: 20px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d63384;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 20px;
+    font-weight: bold;
+	transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #d63384;
+}
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 80px;
+}
+
+.hero-text {
+    width: 550px;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    font-weight: 700;
+    color: #2b2b2b;
+}
+
+.etiket {
+    color: #d63384;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+	animation: yukariGel 1s ease;
+}
+
+.aciklama {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+	transition: 0.3s;
+}
+
+.ana-btn {
+    background-color: #d63384;
+    color: white;
+}
+
+.ana-btn:hover {
+    background-color: #a61e63;
+}
+
+.ikinci-btn {
+    background-color: white;
+    color: #d63384;
+    border: 2px solid #d63384;
+}
+
+.ikinci-btn:hover {
+    background-color: #d63384;
+    color: white;
+}
+
+.hero-card {
+    width: 300px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    text-align: center;
+	transition: 0.3s;
+    animation: yukariGel 1s ease;
+    animation-delay: 0.3s;
+	 animation: softGiris 0.7s ease;
+
+}
+
+}
+.hero-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+}
+
+.hero-card h2 {
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+@keyframes softGiris {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
