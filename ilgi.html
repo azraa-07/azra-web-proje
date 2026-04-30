@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>İlgi Alanlarım</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">Azra</div>
+
+    <div class="menu">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="cv.html">CV</a>
+        <a href="sehir.html">Şehrim</a>
+        <a href="ilgi.html">İlgi Alanlarım</a>
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="ilgi-container">
+
+        <div class="ilgi-card">
+            <div class="mini-slider">
+               <img src="images/oyun1.jpg" class="active">
+				<img src="images/oyun2.jpg">
+				<img src="images/oyun3.jpg">
+				<img src="images/oyun4.jpeg">
+            </div>
+            <h3>Oyunlar</h3>
+			  <p class="ilgi-text">
+        Valorant, Genshin Impact gibi rekabetçi ve hikaye odaklı oyunları severim.
+        Oyunlar benim için sadece eğlence değil, aynı zamanda stres atma yoludur.
+    </p>
+        </div>
+
+        <div class="ilgi-card">
+            <div class="mini-slider">
+                <img src="images/dizi1.jpg" class="active">
+                <img src="images/dizi2.jpg">
+                <img src="images/dizi3.jpg">
+            </div>
+            <h3>Diziler</h3>
+			<p class="ilgi-text">
+    Anime ve K-Drama izlemeyi severim. Bazı insanlar bunları çocukça bulsa da,
+    genelde izlemeden önyargı ile yaklaştıklarını düşünüyorum.
+       </p>
+        </div>
+
+  <div class="ilgi-card">
+    <div class="mini-slider">
+        <img src="images/kedi1.jpeg" class="active">
+        <img src="images/kedi2.jpeg">
+		<img src="images/kedi3.jpeg">
+    </div>
+
+    <h3>Kediler</h3>
+
+    <p class="ilgi-text">
+        Hayvanları, özellikle de kedileri çok severim. Günlük hayatımda
+        karşılaştığım kedilerle ilgilenmek beni mutlu eder. Ayrıca iki tane kedim var.
+    </p>
+</div>
+
+</section>
+<script>
+const sliders = document.querySelectorAll(".mini-slider");
+
+sliders.forEach(slider => {
+    let images = slider.querySelectorAll("img");
+    let index = 0;
+
+    setInterval(() => {
+        images[index].classList.remove("active");
+        index = (index + 1) % images.length;
+        images[index].classList.add("active");
+    }, 2000);
+});
+</script>
+<script>
+const sliders = document.querySelectorAll(".mini-slider");
+
+sliders.forEach(slider => {
+    let images = slider.querySelectorAll("img");
+    let index = 0;
+
+    setInterval(() => {
+        images[index].classList.remove("active");
+        index = (index + 1) % images.length;
+        images[index].classList.add("active");
+    }, 2000);
+});
+</script>
+<section class="api-bolum">
+    <h2>API ile Oyun Önerileri</h2>
+    <button onclick="oyunlariGetir()" class="btn ana-btn">Oyunları Getir</button>
+    <div id="oyun-listesi"></div>
+</section>
+
+<script>
+function oyunlariGetir() {
+    fetch("https://www.freetogame.com/api/games?category=shooter")
+        .then(response => response.json())
+        .then(data => {
+            const liste = document.getElementById("oyun-listesi");
+            liste.innerHTML = "";
+
+            data.slice(0, 3).forEach(oyun => {
+                liste.innerHTML += `
+                    <div class="api-card">
+                        <img src="${oyun.thumbnail}" alt="${oyun.title}">
+                        <h3>${oyun.title}</h3>
+                        <p>${oyun.short_description}</p>
+                        <p><strong>Tür:</strong> ${oyun.genre}</p>
+                    </div>
+                `;
+            });
+        });
+}
+</script>
+</body>
+</html>
