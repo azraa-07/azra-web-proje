@@ -95,29 +95,28 @@ sliders.forEach(slider => {
 });
 </script>
 <section class="api-bolum">
-    <h2>API ile Oyun Önerileri</h2>
-    <button onclick="oyunlariGetir()" class="btn ana-btn">Oyunları Getir</button>
-    <div id="oyun-listesi"></div>
+    <h2>API ile Dizi Bilgisi</h2>
+    <button onclick="diziGetir()" class="btn ana-btn">Dizi Bilgisi Getir</button>
+    <div id="dizi-sonuc"></div>
 </section>
 
 <script>
-function oyunlariGetir() {
-    fetch("https://www.freetogame.com/api/games?category=shooter")
+function diziGetir() {
+    fetch("https://api.tvmaze.com/search/shows?q=attack%20on%20titan")
         .then(response => response.json())
         .then(data => {
-            const liste = document.getElementById("oyun-listesi");
-            liste.innerHTML = "";
+            const dizi = data[0].show;
+            const alan = document.getElementById("dizi-sonuc");
 
-            data.slice(0, 3).forEach(oyun => {
-                liste.innerHTML += `
-                    <div class="api-card">
-                        <img src="${oyun.thumbnail}" alt="${oyun.title}">
-                        <h3>${oyun.title}</h3>
-                        <p>${oyun.short_description}</p>
-                        <p><strong>Tür:</strong> ${oyun.genre}</p>
-                    </div>
-                `;
-            });
+            alan.innerHTML = `
+                <div class="api-card">
+                    <img src="${dizi.image.medium}" alt="${dizi.name}">
+                    <h3>${dizi.name}</h3>
+                    <p><strong>Tür:</strong> ${dizi.genres.join(", ")}</p>
+                    <p><strong>Dil:</strong> ${dizi.language}</p>
+                    <p><strong>Puan:</strong> ${dizi.rating.average}</p>
+                </div>
+            `;
         });
 }
 </script>
