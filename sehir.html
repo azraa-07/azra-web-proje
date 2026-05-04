@@ -37,29 +37,24 @@
             Gaziantep mutfağı; baklava, kebap ve yöresel yemekleriyle Türkiye'nin en önemli mutfak kültürlerinden birine sahiptir.
         </p>
 
-        <h2>Gezilecek Yerler</h2>
-        <ul>
-		<div class="sehir-kartlari">
+        <h2>Gaziantep'te Öne Çıkanlar</h2>
+
+<div class="sehir-kartlari">
     <div class="mini-kart">
         <h3>🍽️ Mutfak</h3>
-        <p>Baklava, kebap ve yöresel lezzetleriyle ünlüdür.</p>
+        <p>Baklava, kebap, katmer ve yöresel yemekleriyle ünlüdür.</p>
     </div>
 
     <div class="mini-kart">
         <h3>🏛️ Tarih</h3>
-        <p>Zeugma Mozaik Müzesi ve Gaziantep Kalesi önemli yerlerindendir.</p>
+        <p>Gaziantep Kalesi, Zeugma Mozaik Müzesi ve tarihi yapılarıyla dikkat çeker.</p>
     </div>
 
     <div class="mini-kart">
         <h3>🛍️ Kültür</h3>
-        <p>Bakırcılar Çarşısı şehrin geleneksel dokusunu yansıtır.</p>
+        <p>Bakırcılar Çarşısı ve geleneksel el sanatları şehrin kültürel dokusunu yansıtır.</p>
     </div>
 </div>
-            <li>Zeugma Mozaik Müzesi</li>
-            <li>Gaziantep Kalesi</li>
-            <li>Rumkale</li>
-            <li>Bakırcılar Çarşısı</li>
-        </ul>
     </div>
 
     <div class="hero-card">
@@ -69,5 +64,91 @@
     </div>
 </section>
 
+<section class="sehir-slider-section">
+
+    <!-- SOL: SLIDER -->
+    <div class="slider-container">
+
+        <button class="prev" onclick="slideDegistir(-1)">❮</button>
+
+        <div class="slider">
+            <img src="images/baklava.jpg" class="slide active">
+            <img src="images/kale.jpg" class="slide">
+            <img src="images/zeugma.jpg" class="slide">
+            <img src="images/carsi.jpg" class="slide">
+            <img src="images/hayvanat.jpg" class="slide">
+        </div>
+
+        <button class="next" onclick="slideDegistir(1)">❯</button>
+    </div>
+
+    <!-- SAĞ: BİLGİLER -->
+    <div class="slider-info">
+<div class="slider-info">
+
+    <h2>Gaziantep'te Gezilecek Yerler</h2>
+
+    <div class="yer">
+        <h3>Baklava</h3>
+        <p>
+            Gaziantep baklavası, Osmanlı dönemine kadar uzanan köklü bir geçmişe sahiptir.
+            İnce yufkalar, Antep fıstığı ve özel şerbetiyle hazırlanır ve dünyaca ünlüdür.
+        </p>
+    </div>
+
+    <div class="yer">
+        <h3>Gaziantep Kalesi</h3>
+        <p>
+            Gaziantep Kalesi'nin temelleri Roma dönemine kadar uzanmaktadır.
+            Şehrin merkezinde yer alır ve tarih boyunca savunma amaçlı kullanılmıştır.
+        </p>
+    </div>
+
+    <div class="yer">
+        <h3>Zeugma Mozaik Müzesi</h3>
+        <p>
+            Zeugma Mozaik Müzesi, dünyanın en büyük mozaik müzelerinden biridir.
+            Roma dönemine ait mozaikler burada sergilenmektedir.
+        </p>
+    </div>
+
+    <div class="yer">
+        <h3>Bakırcılar Çarşısı</h3>
+        <p>
+            Bakırcılar Çarşısı, geleneksel el sanatlarının yaşatıldığı tarihi bir çarşıdır.
+            Bakırcılık Gaziantep'in önemli kültürel miraslarından biridir.
+        </p>
+    </div>
+
+    <div class="yer">
+        <h3>Gaziantep Hayvanat Bahçesi</h3>
+        <p>
+            Gaziantep Hayvanat Bahçesi, Türkiye'nin en büyük hayvanat bahçelerinden biridir.
+            Çok sayıda hayvan türünü barındırır ve ziyaretçilerin ilgisini çeker.
+        </p>
+    </div>
+
+</div>
+    
+
+
+</section>
+
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+
+function slideDegistir(direction) {
+    slides[index].classList.remove("active");
+
+    index += direction;
+
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    slides[index].classList.add("active");
+}
+</script>
 </body>
+
 </html>

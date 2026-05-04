@@ -480,10 +480,13 @@ h2 {
     display: flex;
     justify-content: center;
     margin-top: 30px;
+	gap: 22px;
+	flex-wrap: wrap;
+	
 }
 
 .api-card {
-    width: 300px;
+    width: 230px;
     background: white;
     border-radius: 25px;
     overflow: hidden;
@@ -503,4 +506,178 @@ h2 {
 .api-card h3 {
     margin-top: 15px;
     color: #d63384;
+}
+.sehir-slider {
+    width: 80%;
+    margin: 80px auto;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.slide h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: white;
+    font-size: 28px;
+}
+
+.slide.active {
+    opacity: 1;
+}
+.sehir-galeri {
+    width: 85%;
+    margin: 60px auto;
+    padding: 45px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 30px;
+    box-shadow: 0 25px 55px rgba(70, 40, 90, 0.12);
+    text-align: center;
+}
+
+.galeri-butonlar {
+    margin: 25px 0;
+}
+
+.galeri-butonlar button {
+    padding: 12px 20px;
+    margin: 8px;
+    border: none;
+    border-radius: 20px;
+    background: #d63384;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.galeri-icerik {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+.galeri-icerik img {
+    width: 430px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.galeri-yazi {
+    width: 350px;
+    text-align: left;
+}
+
+.galeri-yazi h3 {
+    color: #d63384;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.galeri-yazi p {
+    line-height: 1.7;
+}
+.sehir-slider-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 85%;
+    margin: 80px auto;
+}
+
+/* SLIDER */
+.slider-container {
+    position: relative;
+    width: 500px;
+    height: 300px;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* oklar */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #d63384;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: -20px; }
+.next { right: -20px; }
+
+/* SAĞ YAZI */
+.slider-info {
+    width: 400px;
+}
+
+.slider-info h2 {
+    color: #d63384;
+    margin-bottom: 20px;
+}
+
+.slider-info ul {
+    margin-bottom: 15px;
+}
+
+.slider-info li {
+    margin-bottom: 10px;
+}
+.yer {
+    margin-bottom: 25px;
+}
+
+.yer h3 {
+    color: #d63384;
+    margin-bottom: 8px;
+}
+
+.yer p {
+    line-height: 1.6;
+    font-size: 15px;
 }
