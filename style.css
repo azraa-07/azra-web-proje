@@ -294,42 +294,8 @@ h2 {
 .cv-card ul {
     padding-left: 20px;
 }
-.slider-bolum {
-    width: 85%;
-    margin: 50px auto;
-    text-align: center;
-}
 
-.slider-bolum h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
 
-.slider {
-    display: flex;
-    gap: 22px;
-    overflow-x: auto;
-    padding: 20px;
-}
-
-.slider a {
-    flex: 0 0 260px;
-    height: 180px;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    transition: 0.3s;
-}
-
-.slider a:hover {
-    transform: translateY(-8px) scale(1.03);
-}
-
-.slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 .ilgi-container {
     display: flex;
     justify-content: center;
@@ -439,13 +405,6 @@ h2 {
     text-align: center;
 }
 
-#oyun-listesi {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
 
 .api-card {
     width: 280px;
@@ -499,185 +458,197 @@ h2 {
     object-fit: cover;
 }
 
-.api-card h3, .api-card p {
-    padding: 0 18px;
-}
-
-.api-card h3 {
-    margin-top: 15px;
-    color: #d63384;
-}
 .sehir-slider {
-    width: 80%;
-    margin: 80px auto;
-}
-
-.slider {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
-}
-
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: 0.5s;
-    text-decoration: none;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 25px;
-}
-
-.slide h3 {
-    position: absolute;
-    bottom: 20px;
-    left: 30px;
-    color: white;
-    font-size: 28px;
-}
-
-.slide.active {
-    opacity: 1;
-}
-.sehir-galeri {
     width: 85%;
-    margin: 60px auto;
-    padding: 45px;
-    background: rgba(255,255,255,0.8);
-    border-radius: 30px;
-    box-shadow: 0 25px 55px rgba(70, 40, 90, 0.12);
-    text-align: center;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
 }
 
-.galeri-butonlar {
-    margin: 25px 0;
+.slider-sol {
+    display: flex;
+    align-items: center;
+    gap: 18px;
 }
 
-.galeri-butonlar button {
-    padding: 12px 20px;
-    margin: 8px;
+.slider-sol img {
+    width: 540px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.ok-btn {
+    width: 55px;
+    height: 55px;
     border: none;
-    border-radius: 20px;
+    border-radius: 50%;
     background: #d63384;
     color: white;
-    font-weight: bold;
+    font-size: 28px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.galeri-icerik {
-    display: flex;
-    gap: 35px;
-    align-items: center;
-    justify-content: center;
+.ok-btn:hover {
+    transform: scale(1.08);
+    background: #b0266d;
 }
 
-.galeri-icerik img {
-    width: 430px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 25px;
+.slider-sag {
+    width: 480px;
 }
 
-.galeri-yazi {
-    width: 350px;
-    text-align: left;
-}
-
-.galeri-yazi h3 {
+.slider-sag h2 {
+    font-size: 42px;
+    margin-bottom: 25px;
     color: #d63384;
-    font-size: 30px;
-    margin-bottom: 15px;
 }
 
-.galeri-yazi p {
-    line-height: 1.7;
+.slider-sag h3 {
+    color: #d63384;
+    margin-top: 28px;
+    margin-bottom: 10px;
+    font-size: 32px;
 }
-.sehir-slider-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
+
+.slider-sag p {
+    line-height: 1.9;
+    font-size: 22px;
+    color: #444;
+}
+.gaziantep-bolum {
     width: 85%;
-    margin: 80px auto;
+    margin: 90px auto;
+    display: flex;
+    gap: 55px;
+    align-items: flex-start;
 }
 
-/* SLIDER */
-.slider-container {
-    position: relative;
-    width: 500px;
-    height: 300px;
+.gaziantep-slider {
+    position: sticky;
+    top: 30px;
+    width: 520px;
+    height: 360px;
 }
 
-.slider {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.slide {
-    position: absolute;
+.gaziantep-slide {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 25px;
-    opacity: 0;
-    transition: 0.5s;
+    border-radius: 30px;
+    box-shadow: 0 25px 55px rgba(70, 40, 90, 0.18);
+    display: none;
 }
 
-.slide.active {
-    opacity: 1;
+.gaziantep-slide.aktif {
+    display: block;
 }
 
-/* oklar */
-.prev, .next {
+.gaziantep-ok {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background: #d63384;
     color: white;
     border: none;
-    padding: 10px;
-    cursor: pointer;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 2;
 }
 
-.prev { left: -20px; }
-.next { right: -20px; }
-
-/* SAĞ YAZI */
-.slider-info {
-    width: 400px;
+.gaziantep-prev {
+    left: -22px;
 }
 
-.slider-info h2 {
-    color: #d63384;
-    margin-bottom: 20px;
+.gaziantep-next {
+    right: -22px;
 }
 
-.slider-info ul {
-    margin-bottom: 15px;
+.gaziantep-bilgi {
+    flex: 1;
 }
 
-.slider-info li {
-    margin-bottom: 10px;
-}
-.yer {
+.gaziantep-bilgi h2 {
+    font-size: 38px;
     margin-bottom: 25px;
+    color: #d63384;
 }
 
-.yer h3 {
+.gaziantep-kart {
+    background: rgba(255, 255, 255, 0.82);
+    padding: 22px 25px;
+    border-radius: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 12px 28px rgba(70, 40, 90, 0.09);
+}
+
+.gaziantep-kart h3 {
     color: #d63384;
     margin-bottom: 8px;
 }
 
-.yer p {
-    line-height: 1.6;
-    font-size: 15px;
+.gaziantep-kart p {
+    line-height: 1.7;
+    color: #444;
 }
+
+.miras-hero {
+    width: 80%;
+    margin: 70px auto 30px;
+    text-align: center;
+}
+
+.miras-hero h1 {
+    font-size: 46px;
+    color: #251f2f;
+    margin-bottom: 18px;
+}
+
+.miras-hero p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+.zeugma-detay{
+    width: 85%;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.zeugma-sol img{
+    width: 500px;
+    border-radius: 30px;
+    box-shadow: 0 20px 45px rgba(70,40,90,0.18);
+}
+
+.zeugma-sag{
+    flex: 1;
+}
+
+.zeugma-sag h2{
+    font-size: 42px;
+    color: #d63384;
+    margin-bottom: 20px;
+}
+
+.zeugma-sag p{
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+    color: #444;
+}
+
+.zeugma-sag ul{
+    margin-top: 20px;
+    line-height: 2;
+}
+.

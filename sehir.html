@@ -64,91 +64,76 @@
     </div>
 </section>
 
-<section class="sehir-slider-section">
 
-    <!-- SOL: SLIDER -->
-    <div class="slider-container">
+<section class="gaziantep-bolum">
 
-        <button class="prev" onclick="slideDegistir(-1)">❮</button>
+    <div class="gaziantep-slider">
+        <button class="gaziantep-ok gaziantep-prev" onclick="gaziantepSlideDegistir(-1)">&#10094;</button>
 
-        <div class="slider">
-            <img src="images/baklava.jpg" class="slide active">
-            <img src="images/kale.jpg" class="slide">
-            <img src="images/zeugma.jpg" class="slide">
-            <img src="images/carsi.jpg" class="slide">
-            <img src="images/hayvanat.jpg" class="slide">
+        <img src="images/baklava.jpg" class="gaziantep-slide aktif">
+        <img src="images/kale.jpg" class="gaziantep-slide">
+        <img src="images/zeugma.jpg" class="gaziantep-slide">
+        <img src="images/carsi.jpg" class="gaziantep-slide">
+        <img src="images/hayvanat.jpg" class="gaziantep-slide">
+
+        <button class="gaziantep-ok gaziantep-next" onclick="gaziantepSlideDegistir(1)">&#10095;</button>
+    </div>
+
+    <div class="gaziantep-bilgi">
+
+        <h2>Gaziantep'te Gezilecek Yerler</h2>
+
+        <div class="gaziantep-kart">
+            <h3>Baklava</h3>
+            <p>Gaziantep baklavası Osmanlı dönemine kadar uzanan köklü bir geçmişe sahiptir. İnce yufkalar, Antep fıstığı ve özel şerbetiyle hazırlanır.</p>
         </div>
 
-        <button class="next" onclick="slideDegistir(1)">❯</button>
+        <div class="gaziantep-kart">
+            <h3>Gaziantep Kalesi</h3>
+            <p>Gaziantep Kalesi Roma döneminden kalmıştır. Şehir merkezinde bulunur ve tarih boyunca savunma amacıyla kullanılmıştır.</p>
+        </div>
+
+        <div class="gaziantep-kart">
+            <h3>Zeugma Mozaik Müzesi</h3>
+            <p>Zeugma Mozaik Müzesi, dünyanın en büyük mozaik müzelerinden biridir. Özellikle Çingene Kızı mozaiğiyle ünlüdür.</p>
+        </div>
+
+        <div class="gaziantep-kart">
+            <h3>Bakırcılar Çarşısı</h3>
+            <p>Bakırcılar Çarşısı, geleneksel el işçiliği ve bakır işlemeleriyle dikkat çeken tarihi bir çarşıdır.</p>
+        </div>
+
+        <div class="gaziantep-kart">
+            <h3>Gaziantep Hayvanat Bahçesi</h3>
+            <p>Türkiye’nin en büyük hayvanat bahçelerinden biridir ve birçok hayvan türüne ev sahipliği yapar.</p>
+        </div>
+
     </div>
-
-    <!-- SAĞ: BİLGİLER -->
-    <div class="slider-info">
-<div class="slider-info">
-
-    <h2>Gaziantep'te Gezilecek Yerler</h2>
-
-    <div class="yer">
-        <h3>Baklava</h3>
-        <p>
-            Gaziantep baklavası, Osmanlı dönemine kadar uzanan köklü bir geçmişe sahiptir.
-            İnce yufkalar, Antep fıstığı ve özel şerbetiyle hazırlanır ve dünyaca ünlüdür.
-        </p>
-    </div>
-
-    <div class="yer">
-        <h3>Gaziantep Kalesi</h3>
-        <p>
-            Gaziantep Kalesi'nin temelleri Roma dönemine kadar uzanmaktadır.
-            Şehrin merkezinde yer alır ve tarih boyunca savunma amaçlı kullanılmıştır.
-        </p>
-    </div>
-
-    <div class="yer">
-        <h3>Zeugma Mozaik Müzesi</h3>
-        <p>
-            Zeugma Mozaik Müzesi, dünyanın en büyük mozaik müzelerinden biridir.
-            Roma dönemine ait mozaikler burada sergilenmektedir.
-        </p>
-    </div>
-
-    <div class="yer">
-        <h3>Bakırcılar Çarşısı</h3>
-        <p>
-            Bakırcılar Çarşısı, geleneksel el sanatlarının yaşatıldığı tarihi bir çarşıdır.
-            Bakırcılık Gaziantep'in önemli kültürel miraslarından biridir.
-        </p>
-    </div>
-
-    <div class="yer">
-        <h3>Gaziantep Hayvanat Bahçesi</h3>
-        <p>
-            Gaziantep Hayvanat Bahçesi, Türkiye'nin en büyük hayvanat bahçelerinden biridir.
-            Çok sayıda hayvan türünü barındırır ve ziyaretçilerin ilgisini çeker.
-        </p>
-    </div>
-
-</div>
-    
-
 
 </section>
 
 <script>
-let index = 0;
-const slides = document.querySelectorAll(".slide");
+let gaziantepIndex = 0;
+const gaziantepSlides = document.querySelectorAll(".gaziantep-slide");
 
-function slideDegistir(direction) {
-    slides[index].classList.remove("active");
+function gaziantepSlideDegistir(yon) {
+    gaziantepSlides[gaziantepIndex].classList.remove("aktif");
 
-    index += direction;
+    gaziantepIndex += yon;
 
-    if (index < 0) index = slides.length - 1;
-    if (index >= slides.length) index = 0;
+    if (gaziantepIndex < 0) {
+        gaziantepIndex = gaziantepSlides.length - 1;
+    }
 
-    slides[index].classList.add("active");
+    if (gaziantepIndex >= gaziantepSlides.length) {
+        gaziantepIndex = 0;
+    }
+
+    gaziantepSlides[gaziantepIndex].classList.add("aktif");
 }
 </script>
+    
+
 </body>
 
 </html>
