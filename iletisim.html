@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Azra Özdemir</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">Azra</div>
+
+    <div class="menu">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="cv.html">CV</a>
+        <a href="sehir.html">Şehrim</a>
+        <a href="miras.html">Mirasımız</a>
+        <a href="ilgi.html">İlgi Alanlarım</a>
+        <a href="iletisim.html">İletişim</a>
+        <a href="login.html">Login</a>
+    </div>
+</nav>
+
+<section class="iletisim-container">
+
+    <form class="iletisim-form" onsubmit="return formKontrol()">
+        <h1>İletişim</h1>
+		<p class="iletisim-aciklama">
+Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.
+</p>
+
+        <label>Ad Soyad</label>
+        <input type="text" id="adsoyad" placeholder="Adınızı giriniz">
+
+        <label>E-posta</label>
+        <input type="email" id="email" placeholder="ornek@mail.com">
+
+        <label>Konu</label>
+        <select id="konu">
+    <option value="">Konu Seçiniz</option>
+    <option>Genel</option>
+    <option>Proje</option>
+    <option>Yazılım</option>
+    <option>Diğer</option>
+      </select>
+	  
+	  <label>Cinsiyet</label>
+
+<div class="radio-group">
+    <label><input type="radio" name="cinsiyet"> Kadın</label>
+    <label><input type="radio" name="cinsiyet"> Erkek</label>
+</div>
+
+<label>İlgi Alanları</label>
+
+<div class="checkbox-group">
+    <label><input type="checkbox"> Oyun</label>
+    <label><input type="checkbox"> Anime</label>
+    <label><input type="checkbox"> Yazılım</label>
+    <label><input type="checkbox"> Müzik</label>
+</div>
+
+        <label>Mesaj</label>
+      <textarea id="mesaj" rows="5" placeholder="Mesajınızı yazınız"></textarea>
+
+		<div class="butonlar">
+    <button type="submit">Gönder</button>
+    <button type="reset" class="temizle-btn">Temizle</button>
+</div>
+
+    </form>
+	
+	
+</section>
+
+<script>
+function formKontrol() {
+    let adsoyad = document.getElementById("adsoyad").value;
+    let email = document.getElementById("email").value;
+    let konu = document.getElementById("konu").value;
+    let mesaj = document.getElementById("mesaj").value;
+
+    if (adsoyad === "" || email === "" || konu === "" || mesaj === "") {
+        alert("Lütfen tüm alanları doldurun.");
+        return false;
+    }
+
+    alert("Form başarıyla gönderildi.");
+    return true;
+}
+</script>
+
+</body>
+</html>
