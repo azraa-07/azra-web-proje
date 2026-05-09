@@ -25,7 +25,7 @@
 
 <section class="iletisim-container">
 
-    <form class="iletisim-form" onsubmit="return formKontrol()">
+ <form class="iletisim-form" onsubmit="return false;">
         <h1>İletişim</h1>
 		<p class="iletisim-aciklama">
 Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.
@@ -36,7 +36,8 @@ Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.
 
         <label>E-posta</label>
         <input type="email" id="email" placeholder="ornek@mail.com">
-
+		<label>Telefon</label>
+		<input type="text" id="telefon" placeholder="05XXXXXXXXX">
         <label>Konu</label>
         <select id="konu">
     <option value="">Konu Seçiniz</option>
@@ -65,8 +66,9 @@ Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.
         <label>Mesaj</label>
       <textarea id="mesaj" rows="5" placeholder="Mesajınızı yazınız"></textarea>
 
-		<div class="butonlar">
-    <button type="submit">Gönder</button>
+	<div class="butonlar">
+    <button type="button" onclick="jsKontrol()">JavaScript Kontrol</button>
+    <button type="button" onclick="vueKontrol()">Vue.js Kontrol</button>
     <button type="reset" class="temizle-btn">Temizle</button>
 </div>
 
@@ -91,6 +93,87 @@ function formKontrol() {
     return true;
 }
 </script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+<script>
+function jsKontrol() {
+    const adsoyad = document.getElementById("adsoyad").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefon = document.getElementById("telefon").value.trim();
+    const konu = document.getElementById("konu").value;
+    const mesaj = document.getElementById("mesaj").value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const telefonRegex = /^[0-9]+$/;
+
+    if (adsoyad === "" || email === "" || telefon === "" || konu === "" || mesaj === "") {
+        alert("JavaScript kontrolü: Lütfen tüm alanları doldurun.");
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("JavaScript kontrolü: Geçerli bir e-posta adresi giriniz.");
+        return;
+    }
+
+    if (!telefonRegex.test(telefon)) {
+        alert("JavaScript kontrolü: Telefon alanına sadece rakam giriniz.");
+        return;
+    }
+
+    alert("JavaScript kontrolü: Form başarıyla doğrulandı.");
+}
+
+function vueKontrol() {
+    const adsoyad = document.getElementById("adsoyad").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefon = document.getElementById("telefon").value.trim();
+    const konu = document.getElementById("konu").value;
+    const mesaj = document.getElementById("mesaj").value.trim();
+
+    const { createApp } = Vue;
+
+    const app = createApp({
+        data() {
+            return {
+                adsoyad,
+                email,
+                telefon,
+                konu,
+                mesaj
+            };
+        },
+        methods: {
+            kontrolEt() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const telefonRegex = /^[0-9]+$/;
+
+                if (this.adsoyad === "" || this.email === "" || this.telefon === "" || this.konu === "" || this.mesaj === "") {
+                    alert("Vue.js kontrolü: Lütfen tüm alanları doldurun.");
+                    return;
+                }
+
+                if (!emailRegex.test(this.email)) {
+                    alert("Vue.js kontrolü: Geçerli bir e-posta adresi giriniz.");
+                    return;
+                }
+
+                if (!telefonRegex.test(this.telefon)) {
+                    alert("Vue.js kontrolü: Telefon alanına sadece rakam giriniz.");
+                    return;
+                }
+
+                alert("Vue.js kontrolü: Form başarıyla doğrulandı.");
+            }
+        },
+        mounted() {
+            this.kontrolEt();
+        }
+    });
+
+    const temp = document.createElement("div");
+    app.mount(temp);
+}
+</script>
 </body>
 </html>
