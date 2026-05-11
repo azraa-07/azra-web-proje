@@ -25,20 +25,34 @@
 
 <section class="iletisim-container">
 
- <form class="iletisim-form" onsubmit="return false;">
+<form class="iletisim-form"
+      action="sonuc.php"
+      method="POST">
         <h1>İletişim</h1>
 		<p class="iletisim-aciklama">
 Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.
 </p>
 
         <label>Ad Soyad</label>
-        <input type="text" id="adsoyad" placeholder="Adınızı giriniz">
+        <input type="text"
+		id="adsoyad" 
+		name="adsoyad"
+		placeholder="Adınızı giriniz">
 
         <label>E-posta</label>
-        <input type="email" id="email" placeholder="ornek@mail.com">
+        <input type="email"
+		id="email"
+		name="email"
+		placeholder="ornek@mail.com">
+		
 		<label>Telefon</label>
-		<input type="text" id="telefon" placeholder="05XXXXXXXXX">
-        <label>Konu</label>
+		<input type="text" 
+		id="telefon"
+		name="telefon"
+		placeholder="05XXXXXXXXX">
+		
+			<label>Konu</label>
+		
         <select id="konu">
     <option value="">Konu Seçiniz</option>
     <option>Genel</option>
@@ -47,7 +61,7 @@ Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.
     <option>Diğer</option>
       </select>
 	  
-	  <label>Cinsiyet</label>
+		<label>Cinsiyet</label>
 
 <div class="radio-group">
     <label><input type="radio" name="cinsiyet"> Kadın</label>
