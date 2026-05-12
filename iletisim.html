@@ -53,7 +53,7 @@ Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.
 		
 			<label>Konu</label>
 		
-        <select id="konu">
+        <select id="konu" name="konu">
     <option value="">Konu Seçiniz</option>
     <option>Genel</option>
     <option>Proje</option>
@@ -78,11 +78,12 @@ Benimle iletişime geçmek için aşağıdaki formu doldurabilirsiniz.
 </div>
 
         <label>Mesaj</label>
-      <textarea id="mesaj" rows="5" placeholder="Mesajınızı yazınız"></textarea>
-
+		<textarea id="mesaj" name="mesaj" rows="5" placeholder="Mesajınızı yazınız"></textarea>
+		
 	<div class="butonlar">
     <button type="button" onclick="jsKontrol()">JavaScript Kontrol</button>
     <button type="button" onclick="vueKontrol()">Vue.js Kontrol</button>
+	<button type="submit">PHP'ye Gönder</button>
     <button type="reset" class="temizle-btn">Temizle</button>
 </div>
 

@@ -8,15 +8,18 @@
 
     <title>Form Sonucu</title>
 
-    <link rel="stylesheet"
-          href="style.css">
+   <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
 
 <div class="sonuc-kutu">
 
-    <h1>Gönderilen Bilgiler</h1>
+<h1>✨ Gönderilen Bilgiler ✨</h1>
+
+<p class="basarili-mesaj">
+✅ Form başarıyla gönderildi!
+</p>
 
     <p>
         <strong>Ad Soyad:</strong>
@@ -39,16 +42,17 @@
     <p>
         <strong>Konu:</strong>
 
-        <?php echo $_POST["konu"]; ?>
-    </p>
+    </p><?php echo $_POST["konu"] ?? "Konu seçilmedi"; ?>
 
     <p>
         <strong>Mesaj:</strong>
+<?php echo $_POST["mesaj"] ?? "Mesaj girilmedi"; ?>
 
-        <?php echo $_POST["mesaj"]; ?>
     </p>
-
+<a href="iletisim.html" class="geri-btn">← Forma Geri Dön</a>
 </div>
+
+
 
 </body>
 </html>
