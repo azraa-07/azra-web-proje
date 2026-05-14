@@ -52,7 +52,5 @@
 <a href="iletisim.html" class="geri-btn">← Forma Geri Dön</a>
 </div>
 
-
-
 </body>
 </html>
